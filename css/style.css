@@ -220,12 +220,13 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   min-width: 180px;
   box-sizing: border-box;
   height: 52px;
   vertical-align: middle;
   white-space: nowrap;
-  padding: 14px 28px;
+  padding: 14px 32px;
   background: #06c755; /* LINEカラー */
   color: #fff;
   text-decoration: none;
@@ -266,9 +267,13 @@ h1 {
   box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);
 }
 .cta.instagram {
-  margin-left: 0 !important;
-  padding-left: 32px;
-  padding-right: 32px;
+  margin-left: 18px;
+  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+  box-shadow: 0 4px 16px rgba(238, 42, 123, 0.15);
+  padding: 14px 40px;
+}
+.cta.instagram:hover {
+  box-shadow: 0 6px 20px rgba(238, 42, 123, 0.4);
 }
 footer {
   text-align: center;
@@ -795,20 +800,29 @@ footer p {
   white-space: nowrap;
 }
 
-.cta.instagram {
-  margin-left: 0 !important;
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
 @media (max-width: 600px) {
   .cta-row {
     flex-direction: column;
     gap: 16px;
-  }
-  .cta {
+    align-items: center;
     width: 100%;
-    min-width: 0;
-    max-width: 340px;
+  }
+  .cta,
+  .cta.instagram {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 14px 32px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 340px !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .cta svg,
+  .cta.instagram svg {
+    margin: 0 !important;
+    flex-shrink: 0 !important;
   }
 }

@@ -56,4 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // Instagram ボタンの中身を別ファイルから読み込む
+  fetch("works/instagram-btn.html")
+    .then((res) => res.text())
+    .then((html) => {
+      const btn = document.getElementById("instagram-btn");
+      if (btn) btn.innerHTML = html;
+    });
 });
