@@ -101,8 +101,10 @@ footer {
   display: none;
 }
 
-.work-card.hidden {
-  display: none;
+.work-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 @keyframes fadeIn {

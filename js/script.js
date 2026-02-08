@@ -38,10 +38,19 @@ document.addEventListener("DOMContentLoaded", () => {
         // 該当するカードを表示/非表示
         workCards.forEach((card) => {
           const cardCategory = card.dataset.category;
+          const cardLink =
+            card.closest(".work-card-link") || card.parentElement;
+
           if (selectedCategory === "all" || cardCategory === selectedCategory) {
             card.classList.remove("hidden");
+            if (cardLink && cardLink.classList) {
+              cardLink.classList.remove("hidden");
+            }
           } else {
             card.classList.add("hidden");
+            if (cardLink && cardLink.classList) {
+              cardLink.classList.add("hidden");
+            }
           }
         });
       });
