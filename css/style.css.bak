@@ -2,9 +2,7 @@
 .header-img-wrap {
   position: relative;
   width: 100%;
-  max-width: 100%;
   height: auto; /* 画像の高さに合わせて自動 */
-  overflow-x: hidden;
 }
 
 .header-top-img {
@@ -45,8 +43,7 @@
 @media (max-width: 768px) {
   .header-awa-img {
     width: 100%;
-    max-width: 174px; /* スマホは元のサイズ感 */
-    top: 33.9%; /* 画像下部に重ねる場合。必要に応じて調整 */
+    max-width: 180px; /* スマホは元のサイズ感 */
   }
 }
 body {
