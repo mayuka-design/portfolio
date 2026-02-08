@@ -101,6 +101,10 @@ footer {
   display: none;
 }
 
+.work-card.hidden {
+  display: none;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
