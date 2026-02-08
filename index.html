@@ -13,57 +13,38 @@
     />
     <meta property="og:type" content="website" />
 
-    <style>
-      body {
-        font-family: sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.7;
-        color: #333;
-      }
-      header {
-        padding: 40px 20px;
-        text-align: center;
-        background: #f5f5f5;
-      }
-      h1 {
-        margin-bottom: 10px;
-      }
-      .section {
-        padding: 40px 20px;
-        max-width: 800px;
-        margin: auto;
-      }
-      .cta {
-        display: inline-block;
-        padding: 14px 28px;
-        background: #06c755; /* LINEカラー */
-        color: #fff;
-        text-decoration: none;
-        border-radius: 8px;
-        font-size: 18px;
-        font-weight: bold;
-      }
-      footer {
-        text-align: center;
-        padding: 20px;
-        background: #fafafa;
-        margin-top: 40px;
-      }
-    </style>
+    <!-- 外部CSS -->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <header>
+      <img class="profile-img" src="img/profile.jpg" alt="プロフィール画像" />
       <h1>Webデザイナー Mayuka</h1>
       <p>あなたのビジネスをデザインで加速します。</p>
-      <a class="cta" href="https://line.me/ti/p/xxxxxx" target="_blank"
-        >LINEで相談する</a
-      >
+      <a class="cta" href="https://line.me/ti/p/xxxxxx" target="_blank">
+        LINEで相談する
+      </a>
     </header>
 
     <section class="section">
       <h2>制作実績</h2>
-      <p>ここに制作実績を掲載します。（後で追加OK）</p>
+      <div class="works">
+        <div class="work-card">
+          <img src="img/sample1.jpg" alt="美容サプリ LP" />
+          <h3>美容サプリ LP</h3>
+          <p class="work-desc">
+            女性向けに世界観を重視したデザイン。予約導線を改善し、CV率が向上。
+          </p>
+        </div>
+        <div class="work-card">
+          <img src="img/sample2.jpg" alt="LP_FV スマホ版_美容サプリ" />
+          <h3>LP_FV スマホ版_美容サプリ</h3>
+          <p class="work-desc">
+            信頼性を重視したシンプル設計。問い合わせ数が増加。
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -78,14 +59,27 @@
 
     <section class="section">
       <h2>プロフィール</h2>
-      <p>ここに自己紹介文を入れます。</p>
+      <p>
+        はじめまして。Webデザイナーの Mayuka です。<br />
+        「伝わるデザインで、あなたのビジネスを前に進める」をテーマに、
+        LP・Webサイト・バナー制作を中心に活動しています。
+      </p>
+      <p>
+        デザインを作るだけでなく、<strong>“目的を達成するための導線設計”</strong>を大切にしています。<br />
+        「問い合わせを増やしたい」「世界観を整えたい」「スマホで見やすくしたい」など、
+        お客様の課題に合わせて最適な形をご提案します。
+      </p>
+      <p>
+        ヒアリングからデザイン、公開後の微調整まで丁寧に対応いたします。<br />
+        まずはお気軽に LINE からご相談ください。
+      </p>
     </section>
 
     <section class="section" style="text-align: center">
       <h2>まずはLINEでお気軽にご相談ください</h2>
-      <a class="cta" href="https://line.me/ti/p/xxxxxx" target="_blank"
-        >LINEで相談する</a
-      >
+      <a class="cta" href="https://line.me/ti/p/xxxxxx" target="_blank">
+        LINEで相談する
+      </a>
     </section>
 
     <footer>© 2026 Web Designer Tomohiro</footer>
