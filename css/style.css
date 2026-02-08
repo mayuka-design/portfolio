@@ -19,7 +19,12 @@ header::before {
   position: absolute;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(255, 182, 220, 0.35) 0%, rgba(255, 160, 200, 0.2) 40%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 182, 220, 0.35) 0%,
+    rgba(255, 160, 200, 0.2) 40%,
+    transparent 70%
+  );
   border-radius: 50%;
   top: -150px;
   right: -150px;
@@ -31,7 +36,12 @@ header::after {
   position: absolute;
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, rgba(255, 200, 230, 0.3) 0%, rgba(240, 180, 210, 0.18) 50%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 230, 0.3) 0%,
+    rgba(240, 180, 210, 0.18) 50%,
+    transparent 70%
+  );
   border-radius: 50%;
   bottom: -120px;
   left: -120px;
@@ -39,7 +49,8 @@ header::after {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
     opacity: 1;
   }
@@ -79,7 +90,8 @@ header h1::after {
 }
 
 @keyframes twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
   }
   50% {
@@ -123,7 +135,12 @@ h1 {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   animation: shine 3s infinite;
 }
 
@@ -157,11 +174,16 @@ footer {
 }
 
 @keyframes shimmer {
-  0%, 100% {
-    box-shadow: 0 8px 20px rgba(218, 165, 120, 0.2), 0 0 0 0 rgba(255, 255, 255, 0);
+  0%,
+  100% {
+    box-shadow:
+      0 8px 20px rgba(218, 165, 120, 0.2),
+      0 0 0 0 rgba(255, 255, 255, 0);
   }
   50% {
-    box-shadow: 0 8px 20px rgba(218, 165, 120, 0.3), 0 0 15px 5px rgba(255, 215, 0, 0.15);
+    box-shadow:
+      0 8px 20px rgba(218, 165, 120, 0.3),
+      0 0 15px 5px rgba(255, 215, 0, 0.15);
   }
 }
 
@@ -282,21 +304,40 @@ footer {
 
 .link-btn {
   display: inline-block;
-  padding: 12px 28px;
-  background: #f0f0f0;
-  color: #333;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #ffc0cb 0%, #ffb3c1 100%);
+  color: #fff;
   text-decoration: none;
-  border-radius: 24px;
-  font-size: 14px;
-  font-weight: 600;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
   transition: all 0.3s ease;
-  border: 2px solid #ddd;
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 176, 193, 0.3);
+  letter-spacing: 0.02em;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
 }
 
 .link-btn:hover {
-  background: #333;
-  color: #fff;
-  border-color: #333;
+  background: linear-gradient(135deg, #ffb3c1 0%, #ffa5b3 100%);
+  box-shadow: 0 8px 25px rgba(255, 176, 193, 0.5);
+  transform: translateY(-2px);
+}
+
+.link-btn:hover::before {
+  left: 100%;
 }
 
 /* アコーディオン */
