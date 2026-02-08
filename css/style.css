@@ -198,25 +198,27 @@ footer {
 
 .category-btn {
   padding: 10px 20px;
-  border: 2px solid #ddd;
+  border: 2px solid #ffc0cb;
   background: #fff;
   border-radius: 24px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #d9497b;
   transition: all 0.3s ease;
 }
 
 .category-btn:hover {
-  border-color: #06c755;
-  color: #06c755;
+  border-color: #ffb3c1;
+  color: #fff;
+  background: #ffb3c1;
 }
 
 .category-btn.active {
-  background: #06c755;
+  background: linear-gradient(135deg, #ff9ab5 0%, #ff8aab 100%);
   color: #fff;
-  border-color: #06c755;
+  border-color: #ff9ab5;
+  box-shadow: 0 4px 12px rgba(255, 154, 181, 0.4);
 }
 
 .works-grid {
