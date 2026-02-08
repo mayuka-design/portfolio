@@ -780,11 +780,13 @@ footer p {
     font-size: 14px;
   }
 
+  .cta-section {
+    display: flex;
+    justify-content: center;
+  }
+
   .cta-section .cta {
-    width: 100%;
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-flex;
   }
 }
 
