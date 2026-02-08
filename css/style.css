@@ -357,13 +357,17 @@ footer {
 
 /* アコーディオン */
 .accordion {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 2px solid rgba(255, 182, 220, 0.3);
+  border-radius: 12px;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .accordion-item {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(255, 182, 220, 0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .accordion-item:last-child {
@@ -372,22 +376,24 @@ footer {
 
 .accordion-btn {
   width: 100%;
-  padding: 16px;
+  padding: 18px 20px;
   text-align: left;
-  background: #f9f9f9;
+  background: linear-gradient(135deg, rgba(255, 245, 247, 0.5) 0%, rgba(255, 250, 252, 0.5) 100%);
   border: none;
   cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  transition: background-color 0.3s ease;
+  font-weight: 700;
+  color: #d9497b;
+  transition: all 0.3s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  letter-spacing: 0.02em;
 }
 
 .accordion-btn:hover {
-  background-color: #f0f0f0;
+  background: linear-gradient(135deg, rgba(255, 230, 240, 0.8) 0%, rgba(255, 240, 248, 0.8) 100%);
+  box-shadow: inset 0 2px 8px rgba(255, 182, 220, 0.2);
 }
 
 .accordion-btn::after {
@@ -395,6 +401,13 @@ footer {
   display: inline-block;
   transition: transform 0.3s ease;
   font-size: 12px;
+  color: #ffb3c1;
+}
+
+.accordion-btn.active {
+  background: linear-gradient(135deg, rgba(255, 182, 220, 0.2) 0%, rgba(255, 176, 193, 0.15) 100%);
+  color: #d9497b;
+  box-shadow: inset 0 2px 12px rgba(255, 182, 220, 0.3);
 }
 
 .accordion-btn.active::after {
@@ -404,8 +417,9 @@ footer {
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
   transition: max-height 0.3s ease;
+  border-top: 1px solid rgba(255, 182, 220, 0.2);
 }
 
 .accordion-content.show {
@@ -413,8 +427,184 @@ footer {
 }
 
 .accordion-content p {
-  padding: 16px;
+  padding: 20px;
   margin: 0;
+  color: #5a5a5a;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  font-size: 15px;
+}
+
+/* プロフィール セクション */
+.profile-section {
+  background: linear-gradient(135deg, rgba(255, 245, 247, 0.8) 0%, rgba(255, 251, 252, 0.8) 100%);
+  border: 2px solid rgba(255, 182, 220, 0.3);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(255, 182, 220, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 40px 20px !important;
+}
+
+.profile-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 182, 220, 0.25) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: float 4.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+.profile-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 230, 0.2) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: float 5.5s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+.profile-section h2 {
+  position: relative;
+  z-index: 1;
+  color: #d9497b;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  border-bottom: 3px solid #ff9ab5;
+  display: inline-block;
+}
+
+.profile-section h2::before {
+  content: "✦ ";
+  color: #ffb3c1;
+  margin-right: 12px;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.profile-section h2::after {
+  content: " ✦";
+  color: #ffb3c1;
+  margin-left: 12px;
+  animation: twinkle 2.5s ease-in-out infinite 0.5s;
+}
+
+.profile-section p {
+  position: relative;
+  z-index: 1;
+  line-height: 2;
+  font-size: 15px;
+  color: #5a5a5a;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+  padding: 20px 0;
+}
+
+.profile-section p:first-of-type {
+  border-top: 1px solid rgba(255, 182, 220, 0.2);
+}
+
+.profile-section p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.profile-section strong {
+  color: #d9497b;
+  font-weight: 700;
+  background: linear-gradient(120deg, rgba(255, 182, 220, 0.1), rgba(255, 200, 230, 0.2));
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* テーマ統一セクション */
+.themed-section {
+  background: linear-gradient(135deg, rgba(255, 245, 247, 0.8) 0%, rgba(255, 251, 252, 0.8) 100%);
+  border: 2px solid rgba(255, 182, 220, 0.3);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(255, 182, 220, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 40px 20px !important;
+}
+
+.themed-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 182, 220, 0.25) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: float 4.5s ease-in-out infinite;
+  z-index: 0;
+}
+
+.themed-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 200, 230, 0.2) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: float 5.5s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+.themed-section h2 {
+  position: relative;
+  z-index: 1;
+  color: #d9497b;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  font-size: 24px;
+  border-bottom: 3px solid #ff9ab5;
+  display: inline-block;
+}
+
+.themed-section h2::before {
+  content: "✦ ";
+  color: #ffb3c1;
+  margin-right: 12px;
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.themed-section h2::after {
+  content: " ✦";
+  color: #ffb3c1;
+  margin-left: 12px;
+  animation: twinkle 2.5s ease-in-out infinite 0.5s;
 }
 
 /* CTA セクション */
