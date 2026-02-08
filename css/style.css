@@ -125,7 +125,14 @@ h1 {
   padding-bottom: 20px;
 }
 .cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  box-sizing: border-box;
+  height: 52px;
+  vertical-align: middle;
+  white-space: nowrap;
   padding: 14px 28px;
   background: #06c755; /* LINEカラー */
   color: #fff;
@@ -165,6 +172,11 @@ h1 {
 
 .cta:hover {
   box-shadow: 0 6px 20px rgba(6, 199, 85, 0.4);
+}
+.cta.instagram {
+  margin-left: 0 !important;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 footer {
   text-align: center;
@@ -675,4 +687,34 @@ footer p {
   gap: 24px;
   margin-top: 24px;
   margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  box-sizing: border-box;
+  height: 52px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.cta.instagram {
+  margin-left: 0 !important;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+@media (max-width: 600px) {
+  .cta-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cta {
+    width: 100%;
+    min-width: 0;
+    max-width: 340px;
+  }
 }
