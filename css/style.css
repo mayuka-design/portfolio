@@ -667,3 +667,12 @@ footer p {
     font-size: 14px;
   }
 }
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
