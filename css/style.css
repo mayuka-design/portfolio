@@ -2,7 +2,9 @@
 .header-img-wrap {
   position: relative;
   width: 100%;
+  max-width: 100%;
   height: auto; /* 画像の高さに合わせて自動 */
+  overflow-x: hidden;
 }
 
 .header-top-img {
@@ -41,9 +43,18 @@
 }
 
 @media (max-width: 768px) {
-  .header-awa-img {
+  .header-img-wrap {
     width: 100%;
-    max-width: 180px; /* スマホは元のサイズ感 */
+    max-width: 100%;
+  }
+  .header-awa-img {
+    display: block;
+    width: 100% !important;
+    max-width: 100%;
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
   }
 }
 body {
@@ -54,6 +65,7 @@ body {
   padding: 0;
   line-height: 1.7;
   color: #333;
+  overflow-x: hidden;
 }
 header {
   padding: 50px 20px;
