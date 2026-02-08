@@ -149,6 +149,11 @@ footer {
   margin: 0;
 }
 
+/* CTA セクション */
+.cta-section {
+  text-align: center;
+}
+
 /* スマホ対応 */
 @media (max-width: 600px) {
   header {
