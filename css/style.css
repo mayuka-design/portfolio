@@ -43,18 +43,9 @@
 }
 
 @media (max-width: 768px) {
-  .header-img-wrap {
-    width: 100%;
-    max-width: 100%;
-  }
   .header-awa-img {
-    display: block;
-    width: 100% !important;
-    max-width: 100%;
-    position: static;
-    left: auto;
-    top: auto;
-    transform: none;
+    width: 100%;
+    max-width: 180px; /* スマホは元のサイズ感 */
   }
 }
 body {
