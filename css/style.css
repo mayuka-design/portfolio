@@ -1,3 +1,53 @@
+/* 画像重ね合わせ用ラッパー */
+.header-img-wrap {
+  position: relative;
+  width: 100%;
+  height: auto; /* 画像の高さに合わせて自動 */
+}
+
+.header-top-img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header-awa-img {
+  position: absolute;
+  top: 35%; /* 画像下部に重ねる場合。必要に応じて調整 */
+  left: 50%;
+  transform: translateX(-50%) translateY(30px) scale(0.98);
+  z-index: 2;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeInAwa 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+@keyframes fadeInAwa {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-img-wrap {
+    max-width: 100%;
+  }
+  .header-awa-img {
+    width: 100%;
+  }
+}
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
@@ -763,23 +813,5 @@ footer p {
     width: 100%;
     min-width: 0;
     max-width: 340px;
-  }
-}
-
-.header-awa-img {
-  display: block;
-  margin: 0 auto 18px auto;
-  max-width: 220px;
-  width: 60vw;
-  height: auto;
-  opacity: 0;
-  transform: translateY(30px) scale(0.98);
-  animation: fadeInAwa 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
-}
-
-@keyframes fadeInAwa {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
