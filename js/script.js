@@ -21,4 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
+
+  // カテゴリーフィルタリング機能
+  const categoryBtns = document.querySelectorAll(".category-btn");
+  const workCards = document.querySelectorAll(".work-card");
+
+  categoryBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const selectedCategory = this.dataset.category;
+
+      // アクティブなボタンを変更
+      categoryBtns.forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+
+      // 該当するカードを表示/非表示
+      workCards.forEach((card) => {
+        const cardCategory = card.dataset.category;
+        if (
+          selectedCategory === "all" ||
+          cardCategory === selectedCategory
+        ) {
+          card.classList.remove("hidden");
+        } else {
+          card.classList.add("hidden");
+        }
+      });
+    });
+  });

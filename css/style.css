@@ -44,24 +44,67 @@ footer {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 制作実績の横スクロール */
-.works {
+/* 制作実績 */
+.category-tabs {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding-bottom: 10px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* iOS スムーズスクロール */
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-btn {
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  background: #fff;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  border-color: #06c755;
+  color: #06c755;
+}
+
+.category-btn.active {
+  background: #06c755;
+  color: #fff;
+  border-color: #06c755;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
 .work-card {
-  flex-shrink: 0;
-  width: 280px;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  opacity: 1;
+  animation: fadeIn 0.3s ease;
+}
+
+.work-card.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .work-card:hover {
@@ -85,6 +128,33 @@ footer {
   margin: 0 16px 16px;
   font-size: 14px;
   color: #666;
+}
+
+/* 作品一覧フッター */
+.works-footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #eee;
+}
+
+.link-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #ddd;
+}
+
+.link-btn:hover {
+  background: #333;
+  color: #fff;
+  border-color: #333;
 }
 
 /* アコーディオン */
@@ -173,13 +243,23 @@ footer {
     padding: 32px 16px;
   }
 
-  /* 横スクロール対応 */
-  .work-card {
-    width: 240px;
+  /* グリッド対応 */
+  .works-grid {
+    grid-template-columns: 1fr;
   }
 
-  .work-card img {
-    height: 150px;
+  .category-tabs {
+    margin-bottom: 24px;
+  }
+
+  .category-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .link-btn {
+    padding: 10px 20px;
+    font-size: 12px;
   }
 
   /* アコーディオン対応 */
