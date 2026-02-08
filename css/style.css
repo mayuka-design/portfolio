@@ -168,9 +168,40 @@ h1 {
 }
 footer {
   text-align: center;
-  padding: 20px;
-  background: #fafafa;
+  padding: 32px 20px;
+  background: linear-gradient(135deg, #f5f3f1 0%, #faf8f6 100%);
   margin-top: 40px;
+  border-top: 1px solid rgba(220, 200, 210, 0.15);
+}
+
+footer p {
+  margin: 0 0 12px 0;
+  color: #5a5a5a;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.footer-links {
+  margin-top: 12px;
+}
+
+.footer-links a {
+  color: #b8697e;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  color: #d4a8b3;
+  text-decoration: underline;
+}
+
+.footer-links span {
+  color: #ddd;
+  margin: 0 8px;
 }
 .profile-img {
   width: 120px;
