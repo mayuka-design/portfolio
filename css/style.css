@@ -107,6 +107,16 @@ footer {
   display: block;
 }
 
+.work-card-link:visited {
+  color: inherit;
+}
+
+.work-card-link:hover,
+.work-card-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
