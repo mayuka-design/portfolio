@@ -77,12 +77,17 @@ footer {
 }
 
 .works-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .work-card {
+  flex-shrink: 0;
+  width: 280px;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -243,9 +248,13 @@ footer {
     padding: 32px 16px;
   }
 
-  /* グリッド対応 */
-  .works-grid {
-    grid-template-columns: 1fr;
+  /* 横スクロール対応 */
+  .work-card {
+    width: 240px;
+  }
+
+  .work-card img {
+    height: 150px;
   }
 
   .category-tabs {
@@ -275,11 +284,5 @@ footer {
   .accordion-content p {
     padding: 12px;
     font-size: 14px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .works-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
