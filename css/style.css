@@ -99,6 +99,12 @@ header .cta-row {
 }
 
 @media (max-width: 768px) {
+  header {
+    padding: 0 16px 12px 16px;
+    background-size: auto;
+    background-position: center top;
+  }
+
   header .cta-row {
     flex-direction: column;
     gap: 12px;
@@ -213,6 +219,24 @@ h1 {
 
 .section:not(:last-of-type) {
   padding-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .section {
+    padding: 32px 16px;
+  }
+
+  .section:not(:first-of-type) {
+    padding-top: 16px;
+  }
+
+  .section:not(:last-of-type) {
+    padding-bottom: 16px;
+  }
 }
 .cta {
   display: inline-flex;
@@ -369,6 +393,17 @@ footer p {
   box-shadow: 0 4px 12px rgba(255, 154, 181, 0.4);
 }
 
+@media (max-width: 768px) {
+  .category-tabs {
+    margin-bottom: 24px;
+  }
+
+  .category-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
 .works-grid {
   display: flex;
   overflow-x: auto;
@@ -432,6 +467,16 @@ footer p {
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .work-card {
+    width: 240px;
+  }
+
+  .work-card img {
+    height: 150px;
+  }
+}
+
 .work-card h3 {
   margin: 16px;
   margin-bottom: 8px;
@@ -493,6 +538,13 @@ footer p {
 
 .link-btn:hover::before {
   left: 100%;
+}
+
+@media (max-width: 768px) {
+  .link-btn {
+    padding: 12px 28px;
+    font-size: 13px;
+  }
 }
 
 /* アコーディオン */
@@ -585,6 +637,22 @@ footer p {
   line-height: 1.8;
   letter-spacing: 0.02em;
   font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .accordion-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .accordion-btn::after {
+    font-size: 10px;
+  }
+
+  .accordion-content p {
+    padding: 12px;
+    font-size: 14px;
+  }
 }
 
 /* セクション装飾（共通） */
@@ -714,71 +782,10 @@ footer p {
   margin: 0 auto;
 }
 
-/* スマホ対応 */
 @media (max-width: 768px) {
-  header {
-    padding: 0 16px 12px 16px;
-    background-size: auto;
-    background-position: center top;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
   .cta {
     font-size: 16px;
     padding: 12px 24px;
-  }
-
-  .section {
-    padding: 32px 16px;
-  }
-
-  .section:not(:first-of-type) {
-    padding-top: 16px;
-  }
-
-  .section:not(:last-of-type) {
-    padding-bottom: 16px;
-  }
-
-  /* 横スクロール対応 */
-  .work-card {
-    width: 240px;
-  }
-
-  .work-card img {
-    height: 150px;
-  }
-
-  .category-tabs {
-    margin-bottom: 24px;
-  }
-
-  .category-btn {
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-
-  .link-btn {
-    padding: 12px 28px;
-    font-size: 13px;
-  }
-
-  /* アコーディオン対応 */
-  .accordion-btn {
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .accordion-btn::after {
-    font-size: 10px;
-  }
-
-  .accordion-content p {
-    padding: 12px;
-    font-size: 14px;
   }
 
   .cta-section {
