@@ -30,6 +30,7 @@
   width: 100%;
   max-width: 100vw;
   height: auto;
+  margin: 0 auto 18px auto;
   position: relative;
   z-index: 1;
 }
@@ -80,44 +81,29 @@ header {
   text-align: center;
   background: linear-gradient(135deg, #fffcf9 0%, #faf5f2 100%);
   position: relative;
-  .cta-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-  }
-
-  .header-top-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  @media (max-width: 768px) {
-    .cta-row {
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-  }
   overflow: hidden;
   border-bottom: 2px solid rgba(218, 165, 120, 0.3);
   background-image: linear-gradient(135deg, #fffcf9 0%, #faf5f2 100%);
-  /* ヘッダー画像（HP_TOPgazou）を直接imgで表示する場合のスタイル */
-  .header-top-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 18px auto;
-  }
   background-size: auto;
   background-position: center top;
   background-repeat: no-repeat;
+}
+
+header .cta-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  header .cta-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
 }
 
 header::before {
@@ -739,7 +725,8 @@ footer p {
   h1 {
     font-size: 24px;
   }
-  ボタンの幅が狭くなっただけ .cta {
+
+  .cta {
     font-size: 16px;
     padding: 12px 24px;
   }
@@ -812,17 +799,6 @@ footer p {
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
-}
-
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 180px;
-  box-sizing: border-box;
-  height: 52px;
-  vertical-align: middle;
-  white-space: nowrap;
 }
 
 @media (max-width: 600px) {
