@@ -60,6 +60,38 @@ document.addEventListener("DOMContentLoaded", () => {
     ); // スプラッシュ終了後に開始
   });
 
+  // ハンバーガーメニューの機能
+  const hamburgerBtn = document.querySelector(".hamburger-menu");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener("click", () => {
+      hamburgerBtn.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+  }
+
+  // ナビゲーションメニューのリンククリック
+  const navLinks = document.querySelectorAll(".nav-menu a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        // メニューを閉じる
+        hamburgerBtn.classList.remove("active");
+        navMenu.classList.remove("active");
+
+        // スムーススクロール
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    });
+  });
+
   const accordionBtns = document.querySelectorAll(".accordion-btn");
 
   accordionBtns.forEach((btn) => {
