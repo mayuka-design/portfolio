@@ -1,14 +1,36 @@
-// アコーディオン機能
+// 定数定義
+// スプラッシュ表示時間（ms）
+const SPLASH_DISPLAY_TIME = 800;
+
+// フェードアウト時間（ms）
+const SPLASH_FADEOUT_TIME = 800;
+
+// コンテンツ表示開始遅延（ms）
+const CONTENT_START_DELAY = SPLASH_DISPLAY_TIME + SPLASH_FADEOUT_TIME;
+
+// 各要素間の遅延（ms）
+const ELEMENT_STAGGER_DELAY = 0;
+
+window.addEventListener("load", () => {
+  // 強制的に先頭にスクロール
+  window.scrollTo(0, 0);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  // スプラッシュスクリーン: 1秒後に非表示
+  // スプラッシュスクリーン表示中はスクロール禁止
+  document.body.style.overflow = "hidden";
+
+  // スプラッシュスクリーン: 0.5秒後に非表示
   const splashScreen = document.getElementById("splash-screen");
   setTimeout(() => {
     splashScreen.classList.add("hidden");
-    // さらに0.5秒後に完全に削除
+    // さらに1秒後に完全に削除
     setTimeout(() => {
       splashScreen.style.display = "none";
-    }, 500);
-  }, 1000);
+      // スクロール復活
+      document.body.style.overflow = "auto";
+    }, SPLASH_FADEOUT_TIME);
+  }, SPLASH_DISPLAY_TIME);
 
   // フェードインアニメーション: スプラッシュ後に開始
   const fadeInElements = document.querySelectorAll(".fade-in");
@@ -17,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
         element.classList.add("show");
       },
-      1200 + index * 200
+      CONTENT_START_DELAY + 50 + index * ELEMENT_STAGGER_DELAY
     ); // スプラッシュ終了後に開始
   });
 

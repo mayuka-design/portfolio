@@ -89,6 +89,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  scroll-behavior: auto;
 }
 
 .cta-row {
@@ -194,7 +195,12 @@ h1 {
 
 .cta.instagram {
   margin-left: 18px;
-  background: linear-gradient(135deg, var(--color-instagram-1) 0%, var(--color-instagram-2) 50%, var(--color-instagram-3) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-instagram-1) 0%,
+    var(--color-instagram-2) 50%,
+    var(--color-instagram-3) 100%
+  );
   box-shadow: 0 4px 16px rgba(238, 42, 123, 0.15);
   padding: 14px 40px;
 }
@@ -778,13 +784,13 @@ footer p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  background-color: var(--color-primary-light);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 1.5s ease;
 }
 
 #splash-screen.hidden {
@@ -793,7 +799,7 @@ footer p {
 }
 
 #splash-screen img {
-  max-width: 80%;
+  max-width: 100%;
   max-height: 80%;
   object-fit: contain;
 }
@@ -802,7 +808,9 @@ footer p {
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition:
+    opacity 2s ease,
+    transform 2s ease;
 }
 
 .fade-in.show {
