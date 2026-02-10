@@ -264,8 +264,8 @@ body {
 .nav-menu {
   position: fixed;
   top: 0;
-  right: -200px;
-  width: 200px;
+  right: -35vw;
+  width: 35vw;
   height: 100vh;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -279,10 +279,10 @@ body {
 
 @media (max-width: 768px) {
   .nav-menu {
-    width: 100vw;
-    left: -100vw;
-    right: auto;
-    transition: left 0.3s ease;
+    width: 50vw;
+    right: -50vw;
+    left: auto;
+    transition: right 0.3s ease;
   }
 }
 
@@ -292,8 +292,7 @@ body {
 
 @media (max-width: 768px) {
   .nav-menu.active {
-    left: 0 !important;
-    right: auto !important;
+    right: 0 !important;
   }
 }
 
