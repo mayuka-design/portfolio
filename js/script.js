@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // トップに戻るボタン
   const scrollToTopBtn = document.getElementById("scroll-to-top");
-  
+
   // スクロール時の表示/非表示
   window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
