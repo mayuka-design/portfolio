@@ -282,7 +282,7 @@ body {
 
 @media (max-width: 768px) {
   .nav-menu.active {
-    right: 0 !important;
+    right: 0;
   }
 }
 
@@ -859,7 +859,8 @@ footer p {
 }
 
 .profile-section h2,
-.themed-section h2 {
+.themed-section h2,
+.news-section h2 {
   position: relative;
   z-index: 1;
   color: #b8697e;
@@ -874,7 +875,8 @@ footer p {
 }
 
 .profile-section h2::before,
-.themed-section h2::before {
+.themed-section h2::before,
+.news-section h2::before {
   content: "✦ ";
   color: #d4a8b3;
   margin-right: 12px;
@@ -882,7 +884,8 @@ footer p {
 }
 
 .profile-section h2::after,
-.themed-section h2::after {
+.themed-section h2::after,
+.news-section h2::after {
   content: " ✦";
   color: #d4a8b3;
   margin-left: 12px;
@@ -900,6 +903,10 @@ footer p {
   letter-spacing: 0.03em;
   margin-bottom: 12px;
   padding: 12px 0;
+}
+
+.news-section p {
+  padding: 0px 0;
 }
 
 .profile-section p:first-of-type {
@@ -922,6 +929,71 @@ footer p {
   );
   padding: 2px 8px;
   border-radius: 4px;
+}
+
+/* ============ お知らせセクション ============ */
+.news-section {
+  padding: 0 20px;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 32px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.news-item {
+  display: flex;
+  gap: 8px;
+  padding: 20px;
+  margin-bottom: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  border-left: 4px solid #d4a8b3;
+  transition: all 0.3s ease;
+  align-items: flex-start;
+}
+
+.news-item:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(200, 180, 190, 0.15);
+  transform: translateY(-2px);
+}
+
+.news-date {
+  flex-shrink: 0;
+  font-weight: 600;
+  color: #b8697e;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  min-width: 80px;
+}
+
+.news-text {
+  margin: 0;
+  color: #5a5a5a;
+  line-height: 1.8;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+  }
+
+  .news-date {
+    font-size: 13px;
+    min-width: auto;
+  }
+
+  .news-text {
+    font-size: 14px;
+  }
 }
 
 /* CTA セクション */
