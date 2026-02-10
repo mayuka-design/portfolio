@@ -63,11 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // ハンバーガーメニューの機能
   const hamburgerBtn = document.querySelector(".hamburger-menu");
   const navMenu = document.querySelector(".nav-menu");
+  const menuOverlay = document.querySelector(".menu-overlay");
 
   if (hamburgerBtn) {
     hamburgerBtn.addEventListener("click", () => {
       hamburgerBtn.classList.toggle("active");
       navMenu.classList.toggle("active");
+      menuOverlay.classList.toggle("active");
+    });
+  }
+
+  // オーバーレイクリックでメニューを閉じる
+  if (menuOverlay) {
+    menuOverlay.addEventListener("click", () => {
+      hamburgerBtn.classList.remove("active");
+      navMenu.classList.remove("active");
+      menuOverlay.classList.remove("active");
     });
   }
 
@@ -83,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // メニューを閉じる
         hamburgerBtn.classList.remove("active");
         navMenu.classList.remove("active");
+        menuOverlay.classList.remove("active");
 
         // スムーススクロール
         setTimeout(() => {
