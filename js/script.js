@@ -1,36 +1,53 @@
-// 定数定義
-// スプラッシュ表示時間（ms）
-const SPLASH_DISPLAY_TIME = 800;
+// ============ 共通設定オブジェクト ============
+// JavaScriptとCSS（カスタムプロパティ）で共有
+const CONFIG = {
+  // スプラッシュ表示時間（ms）
+  SPLASH_DISPLAY_TIME: 800,
+  // フェードイン時間（ms）
+  SPLASH_FADEIN_TIME: 0,
+  // フェードアウト時間（ms）
+  SPLASH_FADEOUT_TIME: 700,
+  // 各要素間の遅延（ms）
+  ELEMENT_STAGGER_DELAY: 300
+};
 
-// フェードアウト時間（ms）
-const SPLASH_FADEOUT_TIME = 800;
+// コンテンツ表示開始遅延（計算値）
+CONFIG.CONTENT_START_DELAY =
+  CONFIG.SPLASH_DISPLAY_TIME + CONFIG.SPLASH_FADEOUT_TIME;
 
-// コンテンツ表示開始遅延（ms）
-const CONTENT_START_DELAY = SPLASH_DISPLAY_TIME + SPLASH_FADEOUT_TIME;
-
-// 各要素間の遅延（ms）
-const ELEMENT_STAGGER_DELAY = 0;
-
-window.addEventListener("load", () => {
-  // 強制的に先頭にスクロール
-  window.scrollTo(0, 0);
-});
-
+// アコーディオン機能
 document.addEventListener("DOMContentLoaded", () => {
+  // CSSカスタムプロパティにセット（msからsに変換）
+  document.documentElement.style.setProperty(
+    "--splash-fadein-time",
+    CONFIG.SPLASH_FADEIN_TIME / 1000 + "s"
+  );
+  document.documentElement.style.setProperty(
+    "--splash-fadeout-time",
+    CONFIG.SPLASH_FADEOUT_TIME / 1000 + "s"
+  );
+  document.documentElement.style.setProperty(
+    "--content-fade-time",
+    CONFIG.CONTENT_START_DELAY / 1000 + "s"
+  );
   // スプラッシュスクリーン表示中はスクロール禁止
   document.body.style.overflow = "hidden";
 
-  // スプラッシュスクリーン: 0.5秒後に非表示
+  // スプラッシュスクリーン: 表示時間後に非表示
   const splashScreen = document.getElementById("splash-screen");
   setTimeout(() => {
     splashScreen.classList.add("hidden");
-    // さらに1秒後に完全に削除
-    setTimeout(() => {
+  }, CONFIG.SPLASH_DISPLAY_TIME);
+
+  // フェードアウトアニメーション完了後に完全削除
+  setTimeout(
+    () => {
       splashScreen.style.display = "none";
       // スクロール復活
       document.body.style.overflow = "auto";
-    }, SPLASH_FADEOUT_TIME);
-  }, SPLASH_DISPLAY_TIME);
+    },
+    CONFIG.SPLASH_DISPLAY_TIME + CONFIG.SPLASH_FADEOUT_TIME + 50
+  );
 
   // フェードインアニメーション: スプラッシュ後に開始
   const fadeInElements = document.querySelectorAll(".fade-in");
@@ -39,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
         element.classList.add("show");
       },
-      CONTENT_START_DELAY + 50 + index * ELEMENT_STAGGER_DELAY
+      CONFIG.CONTENT_START_DELAY + index * CONFIG.ELEMENT_STAGGER_DELAY
     ); // スプラッシュ終了後に開始
   });
 

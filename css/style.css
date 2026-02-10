@@ -2,6 +2,7 @@
 :root {
   --color-primary: #b8697e;
   --color-primary-light: #d4a8b3;
+  --color-primary-lighter: #f0dfe9;
   --color-line: #06c755;
   --color-instagram-1: #f9ce34;
   --color-instagram-2: #ee2a7b;
@@ -15,6 +16,10 @@
   --spacing-md: 12px;
   --spacing-lg: 20px;
   --spacing-xl: 40px;
+  /* アニメーション時間（JavaScript からセット） */
+  --splash-fadein-time: 0.8s;
+  --splash-fadeout-time: 0.8s;
+  --content-fade-time: 1.6s;
 }
 
 /* ============ 画像重ね合わせ用ラッパー ============ */
@@ -784,18 +789,33 @@ footer p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-lighter);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  opacity: 1;
-  transition: opacity 1.5s ease;
+  opacity: 0;
+  animation: splashFadeIn var(--splash-fadein-time) ease forwards;
+}
+
+@keyframes splashFadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 #splash-screen.hidden {
-  opacity: 0;
+  animation: splashFadeOut var(--splash-fadeout-time) ease forwards;
   pointer-events: none;
+}
+
+@keyframes splashFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 #splash-screen img {
@@ -809,8 +829,8 @@ footer p {
   opacity: 0;
   transform: translateY(30px);
   transition:
-    opacity 2s ease,
-    transform 2s ease;
+    opacity var(--content-fade-time) ease,
+    transform var(--content-fade-time) ease;
 }
 
 .fade-in.show {
