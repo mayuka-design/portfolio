@@ -277,8 +277,24 @@ body {
   border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 768px) {
+  .nav-menu {
+    width: 100vw;
+    left: -100vw;
+    right: auto;
+    transition: left 0.3s ease;
+  }
+}
+
 .nav-menu.active {
   right: 0;
+}
+
+@media (max-width: 768px) {
+  .nav-menu.active {
+    left: 0 !important;
+    right: auto !important;
+  }
 }
 
 .nav-menu ul {

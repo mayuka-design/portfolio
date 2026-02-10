@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(
     () => {
       splashScreen.style.display = "none";
+      // スクロール位置をリセット
+      window.scrollTo(0, 0);
       // スクロール復活
       document.body.style.overflow = "auto";
     },
