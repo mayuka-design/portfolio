@@ -31,8 +31,6 @@
   height: auto;
   overflow-x: hidden;
   line-height: 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .header-img-wrap::after {
@@ -78,14 +76,10 @@
 }
 
 @media (max-width: 768px) {
-  .header-img-wrap {
-    margin-left: 0;
-    margin-right: 0;
-  }
   .header-awa-img {
     width: 100%;
-    max-width: 38.9%; /* スマホは元のサイズ感 */
-    top: 36%; /* 画像下部に重ねる場合。必要に応じて調整 */
+    max-width: 38.9%;
+    top: 36%;
     left: 50%;
   }
 }
@@ -229,10 +223,6 @@ body {
 .hamburger-menu.active span:nth-child(2) {
   opacity: 0;
   transform: scale(0);
-}
-
-.hamburger-menu.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 .hamburger-menu.active span:nth-child(3) {
