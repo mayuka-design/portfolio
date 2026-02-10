@@ -1,5 +1,26 @@
 // アコーディオン機能
 document.addEventListener("DOMContentLoaded", () => {
+  // スプラッシュスクリーン: 1秒後に非表示
+  const splashScreen = document.getElementById("splash-screen");
+  setTimeout(() => {
+    splashScreen.classList.add("hidden");
+    // さらに0.5秒後に完全に削除
+    setTimeout(() => {
+      splashScreen.style.display = "none";
+    }, 500);
+  }, 1000);
+
+  // フェードインアニメーション: スプラッシュ後に開始
+  const fadeInElements = document.querySelectorAll(".fade-in");
+  fadeInElements.forEach((element, index) => {
+    setTimeout(
+      () => {
+        element.classList.add("show");
+      },
+      1200 + index * 200
+    ); // スプラッシュ終了後に開始
+  });
+
   const accordionBtns = document.querySelectorAll(".accordion-btn");
 
   accordionBtns.forEach((btn) => {

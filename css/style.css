@@ -770,3 +770,42 @@ footer p {
     flex-shrink: 0;
   }
 }
+
+/* ============ スプラッシュスクリーン ============ */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+#splash-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#splash-screen img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* ============ フェードインアニメーション ============ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
