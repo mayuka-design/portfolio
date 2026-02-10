@@ -1037,8 +1037,7 @@ footer p {
 }
 
 #splash-screen img {
-  max-width: 100%;
-  max-height: 80%;
+  max-width: 70%;
   object-fit: contain;
 }
 
