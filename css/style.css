@@ -425,7 +425,11 @@ h1 {
 footer {
   text-align: center;
   padding: 32px 20px;
-  background: linear-gradient(135deg, var(--color-bg-gradient-1) 0%, var(--color-bg-gradient-2) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-gradient-1) 0%,
+    var(--color-bg-gradient-2) 100%
+  );
   margin-top: var(--spacing-xl);
   border-top: 1px solid var(--color-shadow-lavender-15);
 }
@@ -512,7 +516,11 @@ footer p {
 }
 
 .category-btn.active {
-  background: linear-gradient(135deg, var(--color-pink-medium) 0%, var(--color-pink-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-pink-medium) 0%,
+    var(--color-pink-dark) 100%
+  );
   color: var(--color-white);
   border-color: var(--color-pink-medium);
   box-shadow: 0 4px 12px var(--color-shadow-pink-medium-4);
@@ -625,7 +633,11 @@ footer p {
 .link-btn {
   display: inline-block;
   padding: 16px 40px;
-  background: linear-gradient(135deg, var(--color-pink-lightest) 0%, var(--color-pink-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-pink-lightest) 0%,
+    var(--color-pink-light) 100%
+  );
   color: var(--color-white);
   text-decoration: none;
   border-radius: 30px;
@@ -656,7 +668,11 @@ footer p {
 }
 
 .link-btn:hover {
-  background: linear-gradient(135deg, var(--color-pink-light) 0%, var(--color-pink-darker) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-pink-light) 0%,
+    var(--color-pink-darker) 100%
+  );
   box-shadow: 0 8px 25px var(--color-shadow-pink-5);
   transform: translateY(-2px);
 }
@@ -674,6 +690,7 @@ footer p {
 
 /* ============ アコーディオン ============ */
 .accordion {
+  margin-top: 16px;
   border: 2px solid var(--color-shadow-lavender-2);
   border-radius: 12px;
   overflow: hidden;
@@ -755,7 +772,7 @@ footer p {
   max-height: 500px;
 }
 
-.accordion-content p {
+.themed-section .accordion-content p {
   padding: 20px;
   margin: 0;
   color: var(--color-text-main);
@@ -774,8 +791,8 @@ footer p {
     font-size: 10px;
   }
 
-  .accordion-content p {
-    padding: 12px;
+  .themed-section .accordion-content p {
+    padding: 12px 12px;
     font-size: 14px;
   }
 }
@@ -877,8 +894,7 @@ footer p {
   font-size: 15px;
   color: var(--color-text-main);
   letter-spacing: 0.03em;
-  margin-bottom: 12px;
-  padding: 12px 0;
+  margin: 16px 0;
 }
 
 .news-section p {
@@ -915,7 +931,7 @@ footer p {
 .news-list {
   list-style: none;
   padding: 0;
-  margin: 24px 0 32px 0;
+  margin: 16px 0 32px 0;
   position: relative;
   z-index: 1;
 }
@@ -1103,7 +1119,11 @@ footer p {
   right: 24px;
   width: 52px;
   height: 52px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-light) 100%
+  );
   border: none;
   border-radius: 50%;
   cursor: pointer;
