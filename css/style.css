@@ -953,7 +953,7 @@ footer p {
   border-radius: 8px;
   border-left: 4px solid #d4a8b3;
   transition: all 0.3s ease;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .news-item:hover {
@@ -984,6 +984,7 @@ footer p {
     flex-direction: column;
     gap: 4px;
     padding: 16px;
+    align-items: flex-start;
   }
 
   .news-date {
