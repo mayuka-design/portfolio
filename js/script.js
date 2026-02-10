@@ -45,8 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
       splashScreen.style.display = "none";
       // スクロール位置をリセット
       window.scrollTo(0, 0);
-      // スクロール復活
-      document.body.style.overflow = "auto";
     },
     CONFIG.SPLASH_DISPLAY_TIME + CONFIG.SPLASH_FADEOUT_TIME + 50
   );
