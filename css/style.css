@@ -1057,7 +1057,9 @@ footer p {
     box-sizing: border-box;
   }
   .cta svg,
-  .cta.instagram svg {
+  .cta img,
+  .cta.instagram svg,
+  .cta.instagram img {
     margin: 0;
     flex-shrink: 0;
   }
@@ -1116,4 +1118,56 @@ footer p {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============ トップに戻るボタン ============ */
+.scroll-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9997;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 16px rgba(184, 105, 126, 0.3);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(184, 105, 126, 0.4);
+}
+
+.scroll-to-top img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover img {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
 }

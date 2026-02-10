@@ -148,12 +148,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Instagram ボタン読み込み
-  fetch("works/instagram-btn.html")
-    .then((res) => res.text())
-    .then((html) => {
-      const btn = document.getElementById("instagram-btn");
-      if (btn) btn.innerHTML = html;
-    })
-    .catch((err) => console.warn("Instagram button loading failed:", err));
+  // トップに戻るボタン
+  const scrollToTopBtn = document.getElementById("scroll-to-top");
+  
+  // スクロール時の表示/非表示
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.classList.add("visible");
+    } else {
+      scrollToTopBtn.classList.remove("visible");
+    }
+  });
+
+  // クリック時にトップへスクロール
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
 });
