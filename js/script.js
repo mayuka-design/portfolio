@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (header) {
     setTimeout(() => {
       header.classList.add("show");
-      
+
       // ヘッダー表示後、少し遅延してからセクションの監視を開始
       setTimeout(() => {
         document.querySelectorAll(".section.fade-in").forEach((element) => {
