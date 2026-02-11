@@ -32,6 +32,7 @@
       property="og:description"
       content="相模原市のWebデザイナー・Mayuka（Mayuka Sato）。サムネイル、EC画像、LP画像の制作を専門。丁寧で高品質なデザイン制作。Instagram @mayuka_webdesign / LINE でお気軽にご相談ください."
     />
+    <meta property="og:locale" content="ja_JP" />
     <meta property="og:type" content="website" />
     <meta
       property="og:url"
@@ -66,30 +67,50 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Sato Mayuka (Mayuka Sato / Mayukaデザイナー)",
-        "jobTitle": "Web Designer / Graphic Designer",
-        "image": "https://mayuka-design.github.io/portfolio/img/profile.jpg",
-        "url": "https://mayuka-design.github.io/portfolio/",
-        "sameAs": [
-          "https://www.foriio.com/mayuka-design",
-          "https://www.instagram.com/mayuka_webdesign/"
-        ],
-        "description": "Web designer specializing in thumbnails, EC images, and LP design",
-        "knowsAbout": [
-          "Web Design",
-          "Graphic Design",
-          "LP Design",
-          "EC Image Design"
-        ],
-        "worksFor": {
-          "@type": "SelfEmployed"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Support",
-          "url": "https://lin.ee/elkqvk4"
-        }
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://mayuka-design.github.io/portfolio/#person",
+            "name": "Sato Mayuka (Mayuka Sato / Mayukaデザイナー)",
+            "jobTitle": "Web Designer / Graphic Designer",
+            "image": "https://mayuka-design.github.io/portfolio/img/profile.jpg",
+            "url": "https://mayuka-design.github.io/portfolio/",
+            "sameAs": [
+              "https://www.foriio.com/mayuka-design",
+              "https://www.instagram.com/mayuka_webdesign/"
+            ],
+            "description": "Web designer specializing in thumbnails, EC images, and LP design",
+            "knowsAbout": [
+              "Web Design",
+              "Graphic Design",
+              "LP Design",
+              "EC Image Design"
+            ],
+            "worksFor": {
+              "@type": "SelfEmployed"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Support",
+              "url": "https://lin.ee/elkqvk4"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://mayuka-design.github.io/portfolio/#website",
+            "url": "https://mayuka-design.github.io/portfolio/",
+            "name": "awa.design | Webデザイナー Mayuka Sato",
+            "publisher": {
+              "@id": "https://mayuka-design.github.io/portfolio/#person"
+            },
+            "inLanguage": "ja-JP",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://mayuka-design.github.io/portfolio/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -104,7 +125,7 @@
     <div class="menu-overlay"></div>
 
     <!-- ナビゲーションメニュー -->
-    <nav class="nav-menu">
+    <nav class="nav-menu" aria-label="サイト内ナビゲーション">
       <ul>
         <li><a href="#profile">プロフィール</a></li>
         <li><a href="#works">制作実績</a></li>
@@ -122,16 +143,19 @@
     </button>
 
     <header class="fade-in">
+      <h1 class="visually-hidden">
+        awa.design | Webデザイナー Mayuka Satoのポートフォリオ
+      </h1>
       <div class="header-img-wrap">
         <img
           src="img/HP_TOPgazou.png"
           class="header-top-img"
-          alt="HP_TOPgazou"
+          alt="awa.designのポートフォリオトップビジュアル"
         />
         <img
           src="img/awa.design_moji.png"
           class="header-awa-img"
-          alt="awa.designロゴ"
+          alt="awa.designのロゴ"
         />
       </div>
       <div class="cta-row">
