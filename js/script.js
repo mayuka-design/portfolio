@@ -24,17 +24,17 @@ const toggleMenu = (hamburgerBtn, navMenu, menuOverlay) => {
 
 // ============ メイン処理 ============
 document.addEventListener("DOMContentLoaded", () => {
-  // スプラッシュ画面の泡を生成
-  const bubbleContainer = document.querySelector(".splash-bubbles");
-  if (bubbleContainer) {
-    const bubbleCount = 25;
+  // 泡生成の共通関数
+  const createBubbles = (container, className, count) => {
+    if (!container) return;
+
     const isDesktop = window.matchMedia("(min-width: 769px)").matches;
     const minSize = isDesktop ? 28 : 18;
     const maxSize = isDesktop ? 180 : 66;
 
-    for (let i = 0; i < bubbleCount; i += 1) {
+    for (let i = 0; i < count; i += 1) {
       const bubble = document.createElement("div");
-      bubble.className = "splash-bubble";
+      bubble.className = className;
 
       const size = minSize + Math.random() * (maxSize - minSize);
       const left = Math.random() * 100;
@@ -49,8 +49,25 @@ document.addEventListener("DOMContentLoaded", () => {
       bubble.style.setProperty("--bubble-duration", `${duration}s`);
       bubble.style.setProperty("--bubble-delay", `${delay}s`);
 
-      bubbleContainer.appendChild(bubble);
+      container.appendChild(bubble);
     }
+  };
+
+  // スプラッシュ画面の泡を生成
+  createBubbles(document.querySelector(".splash-bubbles"), "splash-bubble", 25);
+
+  // ヘッダー画像の泡を生成
+  createBubbles(document.querySelector(".header-bubbles"), "header-bubble", 25);
+
+  // ヘッダーの泡を3秒後に削除
+  const headerBubbles = document.querySelector(".header-bubbles");
+  if (headerBubbles) {
+    setTimeout(() => {
+      headerBubbles.classList.add("fade-out");
+      setTimeout(() => {
+        headerBubbles.remove();
+      }, 800);
+    }, 3000);
   }
 
   // CSSカスタムプロパティにセット

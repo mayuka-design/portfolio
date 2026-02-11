@@ -1129,7 +1129,21 @@ footer p {
   pointer-events: none;
 }
 
-.splash-bubble {
+.header-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+
+.header-bubbles.fade-out {
+  opacity: 0;
+}
+
+.splash-bubble,
+.header-bubble {
   position: absolute;
   border-radius: 50%;
   background: radial-gradient(
