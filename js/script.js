@@ -142,21 +142,33 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const bubble = document.createElement("div");
-    bubble.className = "click-bubble";
+    // 5個の泡を生成
+    for (let i = 0; i < 5; i += 1) {
+      const bubble = document.createElement("div");
+      bubble.className = "click-bubble";
 
-    const size = 20 + Math.random() * 40;
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.style.left = `${e.clientX - size / 2}px`;
-    bubble.style.top = `${e.clientY - size / 2}px`;
+      const size = 15 + Math.random() * 30;
+      const angle = (i / 5) * Math.PI * 2;
+      const distance = 15 + Math.random() * 20;
+      const offsetX = Math.cos(angle) * distance;
+      const offsetY = Math.sin(angle) * distance;
+      const xDirection = Math.cos(angle);
+      const yDirection = Math.sin(angle);
 
-    document.body.appendChild(bubble);
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${e.clientX + offsetX - size / 2}px`;
+      bubble.style.top = `${e.clientY + offsetY - size / 2}px`;
+      bubble.style.setProperty("--bubble-x", xDirection);
+      bubble.style.setProperty("--bubble-y", yDirection);
 
-    // アニメーション終了後に削除
-    setTimeout(() => {
-      bubble.remove();
-    }, 1500);
+      document.body.appendChild(bubble);
+
+      // アニメーション終了後に削除
+      setTimeout(() => {
+        bubble.remove();
+      }, 2000);
+    }
   });
 
   // ハンバーガーメニュー
