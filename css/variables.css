@@ -116,4 +116,7 @@
 
   /* 泡アニメーション */
   --bubble-opacity: 0.1;
+  --bubble-glow-pink: rgba(255, 150, 200, 0.1);
+  --bubble-glow-blue: rgba(150, 200, 255, 0.08);
+  --bubble-glow-green: rgba(200, 255, 180, 0.07);
 }
