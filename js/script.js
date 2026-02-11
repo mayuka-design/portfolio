@@ -148,7 +148,10 @@ document.addEventListener("DOMContentLoaded", () => {
       bubble.className = "click-bubble";
 
       const size = 15 + Math.random() * 30;
-      const angle = (i / 5) * Math.PI * 2;
+      // 上方向中心60度範囲（60度～120度）
+      const minAngle = Math.PI / 3;   // 60度（右上）
+      const maxAngle = Math.PI * 2/3; // 120度（左上）
+      const angle = minAngle + (i / 4) * (maxAngle - minAngle);
       const distance = 15 + Math.random() * 20;
       const offsetX = Math.cos(angle) * distance;
       const offsetY = Math.sin(angle) * distance;
