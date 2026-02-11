@@ -3,7 +3,8 @@ const CONFIG = {
   SPLASH_DISPLAY_TIME: 100 + 800,
   SPLASH_FADEIN_TIME: 0,
   SPLASH_FADEOUT_TIME: 700,
-  ELEMENT_STAGGER_DELAY: 500
+  ELEMENT_STAGGER_DELAY: 500,
+  HEADER_BUBBLE_FADEIN_TIME: 5000
 };
 
 CONFIG.CONTENT_START_DELAY =
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ヘッダー画像の泡を生成
   createBubbles(document.querySelector(".header-bubbles"), "header-bubble", 25);
 
-  // ヘッダーの泡を3秒後に削除
+  // ヘッダーの泡を5秒後に削除
   const headerBubbles = document.querySelector(".header-bubbles");
   if (headerBubbles) {
     setTimeout(() => {
@@ -67,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         headerBubbles.remove();
       }, 800);
-    }, 3000);
+    }, CONFIG.HEADER_BUBBLE_FADEIN_TIME);
   }
 
   // CSSカスタムプロパティにセット
