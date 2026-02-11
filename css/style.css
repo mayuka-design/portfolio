@@ -32,8 +32,8 @@
 .header-awa-img {
   position: absolute;
   top: 36%; /* 画像下部に重ねる場合。必要に応じて調整 */
-  left: 51%;
-  width: 39%; /* 親画像幅基準 */
+  left: 50.2%;
+  width: 38%; /* 親画像幅基準 */
   max-width: none;
   height: auto;
   opacity: 0;
