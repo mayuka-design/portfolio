@@ -105,6 +105,9 @@
   --spacing-lg: 20px;
   --spacing-xl: 40px;
 
+  /* ブレークポイント（media queryでは直接参照不可） */
+  --breakpoint-md: 768px;
+
   /* アニメーション時間（JavaScript からセット） */
   --splash-fadein-time: 0.8s;
   --splash-fadeout-time: 0.8s;
