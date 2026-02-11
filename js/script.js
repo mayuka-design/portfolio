@@ -135,6 +135,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }, CONFIG.CONTENT_START_DELAY);
   }
 
+  // クリック時の泡演出
+  document.addEventListener("click", (e) => {
+    // スプラッシュ画面表示中はスキップ
+    if (splashScreen && !splashScreen.classList.contains("hidden")) {
+      return;
+    }
+
+    const bubble = document.createElement("div");
+    bubble.className = "click-bubble";
+
+    const size = 20 + Math.random() * 40;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.left = `${e.clientX - size / 2}px`;
+    bubble.style.top = `${e.clientY - size / 2}px`;
+
+    document.body.appendChild(bubble);
+
+    // アニメーション終了後に削除
+    setTimeout(() => {
+      bubble.remove();
+    }, 1500);
+  });
+
   // ハンバーガーメニュー
   const hamburgerBtn = document.querySelector(".hamburger-menu");
   const navMenu = document.querySelector(".nav-menu");
