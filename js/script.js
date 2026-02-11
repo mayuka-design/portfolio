@@ -104,15 +104,36 @@ document.addEventListener("DOMContentLoaded", () => {
     CONFIG.SPLASH_DISPLAY_TIME + CONFIG.SPLASH_FADEOUT_TIME + 50
   );
 
-  // フェードインアニメーション
-  document.querySelectorAll(".fade-in").forEach((element, index) => {
-    setTimeout(
-      () => {
-        element.classList.add("show");
-      },
-      CONFIG.CONTENT_START_DELAY + index * CONFIG.ELEMENT_STAGGER_DELAY
-    );
-  });
+  // Intersection Observerでフェードインアニメーション
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1
+  };
+
+  const fadeInObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        fadeInObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // ヘッダーは最初に表示
+  const header = document.querySelector("header.fade-in");
+  if (header) {
+    setTimeout(() => {
+      header.classList.add("show");
+      
+      // ヘッダー表示後、少し遅延してからセクションの監視を開始
+      setTimeout(() => {
+        document.querySelectorAll(".section.fade-in").forEach((element) => {
+          fadeInObserver.observe(element);
+        });
+      }, 300);
+    }, CONFIG.CONTENT_START_DELAY);
+  }
 
   // ハンバーガーメニュー
   const hamburgerBtn = document.querySelector(".hamburger-menu");
