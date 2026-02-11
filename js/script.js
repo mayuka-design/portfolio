@@ -1,9 +1,9 @@
 // ============ 共通設定オブジェクト ============
 const CONFIG = {
-  SPLASH_DISPLAY_TIME: 800,
+  SPLASH_DISPLAY_TIME: 100 + 800,
   SPLASH_FADEIN_TIME: 0,
   SPLASH_FADEOUT_TIME: 700,
-  ELEMENT_STAGGER_DELAY: 300
+  ELEMENT_STAGGER_DELAY: 500
 };
 
 CONFIG.CONTENT_START_DELAY =
@@ -28,12 +28,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const bubbleContainer = document.querySelector(".splash-bubbles");
   if (bubbleContainer) {
     const bubbleCount = 25;
+    const isDesktop = window.matchMedia("(min-width: 769px)").matches;
+    const minSize = isDesktop ? 28 : 18;
+    const maxSize = isDesktop ? 180 : 66;
 
     for (let i = 0; i < bubbleCount; i += 1) {
       const bubble = document.createElement("div");
       bubble.className = "splash-bubble";
 
-      const size = 18 + Math.random() * 48;
+      const size = minSize + Math.random() * (maxSize - minSize);
       const left = Math.random() * 100;
       const top = -20 + Math.random() * 140;
       const duration = 16 + Math.random() * 10;
