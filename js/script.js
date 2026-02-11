@@ -24,6 +24,32 @@ const toggleMenu = (hamburgerBtn, navMenu, menuOverlay) => {
 
 // ============ メイン処理 ============
 document.addEventListener("DOMContentLoaded", () => {
+  // スプラッシュ画面の泡を生成
+  const bubbleContainer = document.querySelector(".splash-bubbles");
+  if (bubbleContainer) {
+    const bubbleCount = 25;
+
+    for (let i = 0; i < bubbleCount; i += 1) {
+      const bubble = document.createElement("div");
+      bubble.className = "splash-bubble";
+
+      const size = 18 + Math.random() * 48;
+      const left = Math.random() * 100;
+      const top = -20 + Math.random() * 140;
+      const duration = 16 + Math.random() * 10;
+      const delay = Math.random() * 0.5;
+
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${left}%`;
+      bubble.style.top = `${top}%`;
+      bubble.style.setProperty("--bubble-duration", `${duration}s`);
+      bubble.style.setProperty("--bubble-delay", `${delay}s`);
+
+      bubbleContainer.appendChild(bubble);
+    }
+  }
+
   // CSSカスタムプロパティにセット
   const root = document.documentElement;
   root.style.setProperty(

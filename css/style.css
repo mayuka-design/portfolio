@@ -25,7 +25,10 @@
 }
 
 .header-top-img {
+  display: block;
+  width: 100%;
   max-width: 100vw;
+  height: auto;
   z-index: 1;
 }
 
@@ -1089,6 +1092,7 @@ footer p {
   z-index: 9999;
   opacity: 0;
   animation: splashFadeIn var(--splash-fadein-time) ease forwards;
+  overflow: hidden;
 }
 
 @keyframes splashFadeIn {
@@ -1114,6 +1118,46 @@ footer p {
 #splash-screen img {
   max-width: 70%;
   object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.splash-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.splash-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.35) 35%,
+    rgba(255, 255, 255, 0.1) 60%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  filter: blur(0.2px);
+  opacity: 0.85;
+  animation: bubbleFloat var(--bubble-duration, 6s) linear
+    var(--bubble-delay, 0s) infinite;
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) scale(0.96);
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-160vh) scale(1.02);
+    opacity: 0.8;
+  }
 }
 
 /* ============ フェードインアニメーション ============ */
